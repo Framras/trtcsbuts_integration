@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include trtcsbuts_integration *.css
+recursive-include trtcsbuts_integration *.csv
+recursive-include trtcsbuts_integration *.html
+recursive-include trtcsbuts_integration *.ico
+recursive-include trtcsbuts_integration *.js
+recursive-include trtcsbuts_integration *.json
+recursive-include trtcsbuts_integration *.md
+recursive-include trtcsbuts_integration *.png
+recursive-include trtcsbuts_integration *.py
+recursive-include trtcsbuts_integration *.svg
+recursive-include trtcsbuts_integration *.txt
+recursive-exclude trtcsbuts_integration *.pyc
