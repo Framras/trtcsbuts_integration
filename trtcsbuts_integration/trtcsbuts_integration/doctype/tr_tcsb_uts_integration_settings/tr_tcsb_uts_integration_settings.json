@@ -1,0 +1,100 @@
+{
+  "creation": "2019-10-29 01:38:57.581975",
+  "doctype": "DocType",
+  "document_type": "Setup",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "enable",
+    "uts_section",
+    "systemtoken",
+    "test",
+    "testsystemtoken",
+    "column_break_6",
+    "realserver",
+    "testserver",
+    "contenttype"
+  ],
+  "fields": [
+    {
+      "default": "0",
+      "fieldname": "enable",
+      "fieldtype": "Check",
+      "label": "Enable"
+    },
+    {
+      "fieldname": "uts_section",
+      "fieldtype": "Section Break",
+      "label": "UTS Settings"
+    },
+    {
+      "fieldname": "systemtoken",
+      "fieldtype": "Data",
+      "label": "System Token"
+    },
+    {
+      "default": "0",
+      "fieldname": "test",
+      "fieldtype": "Check",
+      "label": "Use Test"
+    },
+    {
+      "fieldname": "testsystemtoken",
+      "fieldtype": "Data",
+      "label": "Test System Token"
+    },
+    {
+      "fieldname": "column_break_6",
+      "fieldtype": "Column Break"
+    },
+    {
+      "default": "https://utsuygulama.saglik.gov.tr",
+      "fieldname": "realserver",
+      "fieldtype": "Data",
+      "label": "Real Setting",
+      "read_only": 1
+    },
+    {
+      "default": "https://utstest.saglik.gov.tr",
+      "fieldname": "testserver",
+      "fieldtype": "Data",
+      "label": "Test Setting",
+      "read_only": 1
+    },
+    {
+      "default": "application/json;charset=UTF-8",
+      "fieldname": "contenttype",
+      "fieldtype": "Data",
+      "label": "Content-Type",
+      "read_only": 1
+    }
+  ],
+  "issingle": 1,
+  "modified": "2019-10-29 01:43:16.823829",
+  "modified_by": "Administrator",
+  "module": "Trtcsbuts Integration",
+  "name": "TR TCSB UTS Integration Settings",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "print": 1,
+      "read": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "email": 1,
+      "print": 1,
+      "read": 1,
+      "role": "All",
+      "share": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1
+}
