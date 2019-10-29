@@ -79,7 +79,4 @@ def firmasorgulatest(testserver, testtoken, testcontenttype):
     # Web servislerin tamamında HTTP request method olarak “POST” metodu kullanılmaktadır.
     response = s.post(_requesturl, servicerequestdatafields)
 
-    # For successful API call, response code will be 200 (OK)
-    if response.ok:
-        return response.text
-        # return json.loads(response.content)
+    return response.text
