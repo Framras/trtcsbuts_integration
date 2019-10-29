@@ -4,20 +4,25 @@ import json
 
 
 def communicate_with_uts(servicepath, servicerequestdatafields):
-    # Replace with the correct URL
-    self.url = "https://utsuygulama.saglik.gov.tr/UTS/rest/kurum/firmaSorgula"
-    self.testurl = "https://utstest.saglik.gov.tr/UTS/rest/kurum/firmaSorgula"
+    # Select the server according to the mode of the integration
+    if frappe.db.get_single_value("TR TCSB UTS Integration Settings", "test") == 1:
+        url = frappe.db.get_single_value("TR TCSB UTS Integration Settings", "testserver")
+        utstoken = frappe.db.get_single_value("TR TCSB UTS Integration Settings", "testsystemtoken")
+    else:
+        url = frappe.db.get_single_value("TR TCSB UTS Integration Settings", "realserver")
+        utstoken = frappe.db.get_single_value("TR TCSB UTS Integration Settings", "systemtoken")
+
     # her web servis çağrısının başlık (header) kısmına utsToken etiketiyle sistem token’ının değerini eklemelidir
-    self.__headers = {
-        'utsToken': 'System1a026283-c87c-47a6-b9d7-0234adcf1a64',
-        'Content-Type': 'application/json;charset=UTF-8'
+    __headers = {
+        'utsToken': utstoken,
+        'Content-Type': frappe.db.get_single_value("TR TCSB UTS Integration Settings", "contenttype")
     }
-    self._requesturl = self.url + servicepath
+    _requesturl = url + servicepath
 
     s = requests.Session()
-    s.headers.update(self.__headers)
+    s.headers.update(__headers)
     # Web servislerin tamamında HTTP request method olarak “POST” metodu kullanılmaktadır.
-    response = s.post(self._requesturl, servicerequestdatafields)
+    response = s.post(_requesturl, servicerequestdatafields)
 
     # For successful API call, response code will be 200 (OK)
     if response.ok:

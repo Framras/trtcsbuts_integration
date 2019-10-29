@@ -30,6 +30,7 @@
       "label": "Enable"
     },
     {
+      "collapsible": 1,
       "fieldname": "uts_section",
       "fieldtype": "Section Break",
       "label": "UTS Settings"
@@ -92,6 +93,7 @@
       "read_only": 1
     },
     {
+      "collapsible": 1,
       "fieldname": "section_utstest",
       "fieldtype": "Section Break",
       "label": "UTS Test System Settings"
@@ -113,7 +115,7 @@
     }
   ],
   "issingle": 1,
-  "modified": "2019-10-29 20:32:15.773586",
+  "modified": "2019-10-29 21:28:45.359885",
   "modified_by": "Administrator",
   "module": "Trtcsbuts Integration",
   "name": "TR TCSB UTS Integration Settings",
