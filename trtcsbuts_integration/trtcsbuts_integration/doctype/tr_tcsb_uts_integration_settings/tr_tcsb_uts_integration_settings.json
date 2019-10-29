@@ -8,18 +8,18 @@
     "enable",
     "uts_section",
     "realserver",
-    "btnutstestreal",
-    "column_break_6",
     "systemtoken",
+    "column_break_6",
+    "test_realintegration",
     "realresult",
-    "utstest_section",
+    "section_utstest",
     "testserver",
-    "btnutstesttest",
+    "testsystemtoken",
     "test",
     "column_break_9",
-    "testsystemtoken",
+    "test_testintegration",
     "testresult",
-    "utsglobal_section",
+    "section_utsglobal",
     "contenttype"
   ],
   "fields": [
@@ -76,18 +76,8 @@
       "read_only": 1
     },
     {
-      "fieldname": "utstest_section",
-      "fieldtype": "Section Break",
-      "label": "UTS Test System Settings"
-    },
-    {
       "fieldname": "column_break_9",
       "fieldtype": "Column Break"
-    },
-    {
-      "fieldname": "utsglobal_section",
-      "fieldtype": "Section Break",
-      "label": "UTS Global Settings"
     },
     {
       "fieldname": "realresult",
@@ -102,18 +92,28 @@
       "read_only": 1
     },
     {
-      "fieldname": "btnutstestreal",
+      "fieldname": "section_utstest",
+      "fieldtype": "Section Break",
+      "label": "UTS Test System Settings"
+    },
+    {
+      "fieldname": "section_utsglobal",
+      "fieldtype": "Section Break",
+      "label": "UTS Global Settings"
+    },
+    {
+      "fieldname": "test_realintegration",
       "fieldtype": "Button",
       "label": "Test Integration"
     },
     {
-      "fieldname": "btnutstesttest",
+      "fieldname": "test_testintegration",
       "fieldtype": "Button",
-      "label": "Test Settings (Test System)"
+      "label": "Test Integration (Test System)"
     }
   ],
   "issingle": 1,
-  "modified": "2019-10-29 15:38:37.394950",
+  "modified": "2019-10-29 20:32:15.773586",
   "modified_by": "Administrator",
   "module": "Trtcsbuts Integration",
   "name": "TR TCSB UTS Integration Settings",
