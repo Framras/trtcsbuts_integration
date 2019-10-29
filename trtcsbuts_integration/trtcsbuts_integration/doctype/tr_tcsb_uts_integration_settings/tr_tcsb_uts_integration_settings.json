@@ -7,12 +7,19 @@
   "field_order": [
     "enable",
     "uts_section",
-    "systemtoken",
-    "test",
-    "testsystemtoken",
-    "column_break_6",
     "realserver",
+    "btnutstestreal",
+    "column_break_6",
+    "systemtoken",
+    "realresult",
+    "utstest_section",
     "testserver",
+    "btnutstesttest",
+    "test",
+    "column_break_9",
+    "testsystemtoken",
+    "testresult",
+    "utsglobal_section",
     "contenttype"
   ],
   "fields": [
@@ -51,7 +58,7 @@
       "default": "https://utstest.saglik.gov.tr",
       "fieldname": "testserver",
       "fieldtype": "Data",
-      "label": "Test Setting",
+      "label": "Test Server",
       "read_only": 1
     },
     {
@@ -65,12 +72,48 @@
       "default": "https://utsuygulama.saglik.gov.tr",
       "fieldname": "realserver",
       "fieldtype": "Data",
-      "label": "Real Setting",
+      "label": "Server",
       "read_only": 1
+    },
+    {
+      "fieldname": "utstest_section",
+      "fieldtype": "Section Break",
+      "label": "UTS Test System Settings"
+    },
+    {
+      "fieldname": "column_break_9",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "utsglobal_section",
+      "fieldtype": "Section Break",
+      "label": "UTS Global Settings"
+    },
+    {
+      "fieldname": "realresult",
+      "fieldtype": "Data",
+      "label": "Test Result",
+      "read_only": 1
+    },
+    {
+      "fieldname": "testresult",
+      "fieldtype": "Data",
+      "label": "Test Result (Test System)",
+      "read_only": 1
+    },
+    {
+      "fieldname": "btnutstestreal",
+      "fieldtype": "Button",
+      "label": "Test Integration"
+    },
+    {
+      "fieldname": "btnutstesttest",
+      "fieldtype": "Button",
+      "label": "Test Settings (Test System)"
     }
   ],
   "issingle": 1,
-  "modified": "2019-10-29 02:24:19.742101",
+  "modified": "2019-10-29 15:38:37.394950",
   "modified_by": "Administrator",
   "module": "Trtcsbuts Integration",
   "name": "TR TCSB UTS Integration Settings",
