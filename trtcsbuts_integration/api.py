@@ -38,6 +38,8 @@ def communicate_with_uts(servicepath, servicerequestdatafields):
         else:
             # If response code is not ok (200), print the resulting http error code with description
             response.raise_for_status()
+    else:
+        pass
 
 
 # FİRMA SORGULAMA SERVİSİ
