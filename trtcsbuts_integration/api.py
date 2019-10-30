@@ -4,15 +4,18 @@ import json
 
 
 def communicate_with_uts(servicepath, servicerequestdatafields):
+    url = ""
+    utstoken = ""
+    company = frappe.defaults.get_user_default("Company")
     # This should only be used if the integration is enabled
     if frappe.db.get_single_value("TR TCSB UTS Integration Settings", "enable") == 1:
         # Select the server according to the mode of the integration
         if frappe.db.get_single_value("TR TCSB UTS Integration Settings", "test") == 1:
             url = frappe.db.get_single_value("TR TCSB UTS Integration Settings", "testserver")
-            utstoken = frappe.db.get_single_value("TR TCSB UTS Integration Settings", "testsystemtoken")
+            utstoken = frappe.db.get_value("TR TCSB UTS Company Settings", "company", "testsystemtoken")
         else:
             url = frappe.db.get_single_value("TR TCSB UTS Integration Settings", "realserver")
-            utstoken = frappe.db.get_single_value("TR TCSB UTS Integration Settings", "systemtoken")
+            utstoken = frappe.db.get_value("TR TCSB UTS Company Settings", "company", "systemtoken")
 
         # her web servis çağrısının başlık (header) kısmına utsToken etiketiyle sistem token’ının değerini eklemelidir
         __headers = {
@@ -65,16 +68,21 @@ def firmasorgula(mrs, vrg, unv, krn, cky):
 
 
 @frappe.whitelist()
-def firmasorgulatest(testserver, testtoken, testcontenttype):
+def firmasorgulatest(test, testtoken):
     servicepath = "/UTS/rest/kurum/firmaSorgula"
     # Replace with the correct URL
-    url = testserver
+    url = ""
+    if test == "real":
+        url = frappe.db.get_single_value("TR TCSB UTS Integration Settings", "realserver")
+    if test == "test":
+        url = frappe.db.get_single_value("TR TCSB UTS Integration Settings", "testserver")
     # her web servis çağrısının başlık (header) kısmına utsToken etiketiyle sistem token’ının değerini eklemelidir
+    company = frappe.defaults.get_user_default("Company")
     __headers = {
         'utsToken': testtoken,
-        'Content-Type': testcontenttype
+        'Content-Type': frappe.db.get_single_value("TR TCSB UTS Integration Settings", "contenttype")
     }
-    company = frappe.defaults.get_user_default("Company")
+
     servicedata = "{"
     servicedata = servicedata + "\"VRG\":\"" + frappe.db.get_value("Company", company, "tax_id") + "\""
     servicedata = servicedata + "}"
