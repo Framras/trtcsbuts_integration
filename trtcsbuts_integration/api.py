@@ -10,12 +10,12 @@ def communicate_with_uts(servicepath, servicerequestdatafields):
     # This should only be used if the integration is enabled
     if frappe.db.get_single_value("TR TCSB UTS Integration Settings", "enable") == 1:
         # Select the server according to the mode of the integration
-        if frappe.db.get_single_value("TR TCSB UTS Integration Settings", "test") == 1:
-            url = frappe.db.get_single_value("TR TCSB UTS Integration Settings", "testserver")
-            utstoken = frappe.db.get_value("TR TCSB UTS Company Settings", "company", "testsystemtoken")
-        else:
+        if frappe.db.get_single_value("TR TCSB UTS Integration Settings", "test") == 0:
             url = frappe.db.get_single_value("TR TCSB UTS Integration Settings", "realserver")
             utstoken = frappe.db.get_value("TR TCSB UTS Company Settings", "company", "systemtoken")
+        else:
+            url = frappe.db.get_single_value("TR TCSB UTS Integration Settings", "testserver")
+            utstoken = frappe.db.get_value("TR TCSB UTS Company Settings", "company", "testsystemtoken")
 
         # her web servis çağrısının başlık (header) kısmına utsToken etiketiyle sistem token’ının değerini eklemelidir
         __headers = {
@@ -61,9 +61,8 @@ def firmasorgula(mrs, vrg, unv, krn, cky):
         servicedata = servicedata + "\"KRN\":" + krn + ","
     if cky != "":
         servicedata = servicedata + "\"CKY\":\"" + cky + "\""
-
     servicedata = servicedata + "}"
-    print(servicedata)
+
     return communicate_with_uts(servicepath, servicedata)
 
 
