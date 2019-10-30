@@ -30,22 +30,19 @@
       "default": "https://utstest.saglik.gov.tr",
       "fieldname": "testserver",
       "fieldtype": "Data",
-      "label": "Test Server",
-      "read_only": 1
+      "label": "Test Server"
     },
     {
       "default": "application/json;charset=UTF-8",
       "fieldname": "contenttype",
       "fieldtype": "Data",
-      "label": "Content-Type",
-      "read_only": 1
+      "label": "Content-Type"
     },
     {
       "default": "https://utsuygulama.saglik.gov.tr",
       "fieldname": "realserver",
       "fieldtype": "Data",
-      "label": "Server",
-      "read_only": 1
+      "label": "Server"
     },
     {
       "collapsible": 1,
@@ -60,7 +57,7 @@
     }
   ],
   "issingle": 1,
-  "modified": "2019-10-30 21:57:13.878283",
+  "modified": "2019-10-30 22:48:57.824452",
   "modified_by": "Administrator",
   "module": "Trtcsbuts Integration",
   "name": "TR TCSB UTS Integration Settings",

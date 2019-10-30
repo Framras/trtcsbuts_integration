@@ -67,7 +67,7 @@ def firmasorgula(mrs, vrg, unv, krn, cky):
 
 
 @frappe.whitelist()
-def firmasorgulatest(test, testtoken):
+def test_integration(test, testtoken):
     servicepath = "/UTS/rest/kurum/firmaSorgula"
     # Replace with the correct URL
     url = ""
