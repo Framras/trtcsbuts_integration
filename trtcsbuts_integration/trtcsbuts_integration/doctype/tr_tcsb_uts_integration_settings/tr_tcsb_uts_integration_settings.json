@@ -8,13 +8,10 @@
     "enable",
     "uts_section",
     "realserver",
-    "column_break_6",
     "section_utstest",
     "testserver",
-    "column_break_9",
     "section_utsglobal",
-    "contenttype",
-    "column_break_10"
+    "contenttype"
   ],
   "fields": [
     {
@@ -28,10 +25,6 @@
       "fieldname": "uts_section",
       "fieldtype": "Section Break",
       "label": "UTS Settings"
-    },
-    {
-      "fieldname": "column_break_6",
-      "fieldtype": "Column Break"
     },
     {
       "default": "https://utstest.saglik.gov.tr",
@@ -55,10 +48,6 @@
       "read_only": 1
     },
     {
-      "fieldname": "column_break_9",
-      "fieldtype": "Column Break"
-    },
-    {
       "collapsible": 1,
       "fieldname": "section_utstest",
       "fieldtype": "Section Break",
@@ -68,14 +57,10 @@
       "fieldname": "section_utsglobal",
       "fieldtype": "Section Break",
       "label": "UTS Global Settings"
-    },
-    {
-      "fieldname": "column_break_10",
-      "fieldtype": "Column Break"
     }
   ],
   "issingle": 1,
-  "modified": "2019-10-30 21:39:10.721001",
+  "modified": "2019-10-30 21:57:13.878283",
   "modified_by": "Administrator",
   "module": "Trtcsbuts Integration",
   "name": "TR TCSB UTS Integration Settings",
