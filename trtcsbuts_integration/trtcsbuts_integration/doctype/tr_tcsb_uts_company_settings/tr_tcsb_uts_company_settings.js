@@ -6,7 +6,7 @@ frappe.ui.form.on('TR TCSB UTS Company Settings', {
 
 	// }
 	test_realintegration: function(frm){
-	    if(frm.doc.realserver!=""){
+	    if(frm.doc.systemtoken!=""){
 	        frappe.call({
 	            method: "trtcsbuts_integration.api.firmasorgulatest",
 	            args:{
@@ -20,7 +20,7 @@ frappe.ui.form.on('TR TCSB UTS Company Settings', {
 	    }
 	},
 		test_testintegration: function(frm){
-	    if(frm.doc.testserver!=""){
+	    if(frm.doc.testsystemtoken!=""){
 	        frappe.call({
 	            method: "trtcsbuts_integration.api.firmasorgulatest",
 	            args:{
