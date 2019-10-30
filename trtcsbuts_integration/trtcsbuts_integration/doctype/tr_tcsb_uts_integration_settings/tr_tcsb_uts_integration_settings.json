@@ -13,7 +13,8 @@
     "testserver",
     "column_break_9",
     "section_utsglobal",
-    "contenttype"
+    "contenttype",
+    "column_break_10"
   ],
   "fields": [
     {
@@ -67,10 +68,14 @@
       "fieldname": "section_utsglobal",
       "fieldtype": "Section Break",
       "label": "UTS Global Settings"
+    },
+    {
+      "fieldname": "column_break_10",
+      "fieldtype": "Column Break"
     }
   ],
   "issingle": 1,
-  "modified": "2019-10-30 21:35:54.626060",
+  "modified": "2019-10-30 21:39:10.721001",
   "modified_by": "Administrator",
   "module": "Trtcsbuts Integration",
   "name": "TR TCSB UTS Integration Settings",
